@@ -7,7 +7,7 @@ const profileCharacter = document.querySelector(".profile__character");
 
 const formButton = document.querySelector(".form__button");
 
-let formElement = document.querySelector(".popup__form");
+let formElement = document.querySelector(".form");
 
 let nameInput = formElement.querySelector(".form__input_name-title");
 let jobInput = formElement.querySelector(".form__input_name-subtitle");
