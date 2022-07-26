@@ -1,0 +1,14 @@
+.form__input {
+  height: 57px;
+  border: none;
+  border-bottom: 1px solid #000;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  overflow-y: scroll;
+}
+
+.form__input:focus {
+  outline-color: #bcbcc4;
+}

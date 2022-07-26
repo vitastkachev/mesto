@@ -1,0 +1,16 @@
+.profile__character {
+  margin-block-start: 10px;
+  margin-block-end: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 767px) {
+  .profile__character {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.214;
+  }
+}
