@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="pages/index.css">
   <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
-<body>
-  <div class="page">
+<body class="page">
+  <!-- <div class="page"> -->
     <header class="header">
       <img src="./images/Vector.svg" alt="логотип" class="header__logo">
     </header>
@@ -33,42 +33,42 @@
         <div class="element">
           <img src="./images/karachayevsk.jpg" alt="Карачаево-Черкесия" class="element__img">
           <div class="element__container">
-            <h3 class="element__title">Карачаевск</h3>
+            <h2 class="element__title">Карачаевск</h2>
             <button class="element__like-button"><img src="./images/like.svg" alt=""></button>
           </div>
         </div>
         <div class="element">
           <img src="./images/elbrus.jpg" alt="Эльбрус" class="element__img">
           <div class="element__container">
-            <h3 class="element__title">Гора Эльбрус</h3>
+            <h2 class="element__title">Гора Эльбрус</h2>
             <button class="element__like-button"><img src="./images/like.svg" alt=""></button>
           </div>
         </div>
         <div class="element">
           <img src="./images/dombay.jpg" alt="Домбай" class="element__img">
           <div class="element__container">
-            <h3 class="element__title">Домбай</h3>
+            <h2 class="element__title">Домбай</h2>
             <button class="element__like-button"><img src="./images/like.svg" alt=""></button>
           </div>
         </div>
         <div class="element">
           <img src="./images/elbrus.jpg" alt="Эльбрус" class="element__img">
           <div class="element__container">
-            <h3 class="element__title">Гора Эльбрус</h3>
+            <h2 class="element__title">Гора Эльбрус</h2>
             <button class="element__like-button"><img src="./images/like.svg" alt=""></button>
           </div>
         </div>
         <div class="element">
           <img src="./images/dombay.jpg" alt="Домбай" class="element__img">
           <div class="element__container">
-            <h3 class="element__title">Домбай</h3>
+            <h2 class="element__title">Домбай</h2>
             <button class="element__like-button"><img src="./images/like.svg" alt=""></button>
           </div>
         </div>
         <div class="element">
           <img src="./images/karachayevsk.jpg" alt="Карачаево-Черкесия" class="element__img">
           <div class="element__container">
-            <h3 class="element__title">Карачаево-Черкесия</h3>
+            <h2 class="element__title">Карачаево-Черкесия</h2>
             <button class="element__like-button"><img src="./images/like.svg" alt="лайк"></button>
           </div>
         </div>
@@ -77,18 +77,18 @@
     <footer class="footer">
       <img src="./images/©2020mestorussia.svg" alt="логотип" class="footer__logo">
     </footer>
-  </div>
+  <!-- </div> -->
   <div class="popup">
     <div class="popup__window">
       <button type="button" class="popup__close-button"></button>
-      <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="form">
-        <input type="text" name="title" class="form__input form__input_name-title">
-        <input type="text" name="subtitle" class="form__input form__input_name-subtitle">
-        <button type="submit" class="form__button">Сохранить</button>
+      <h3 class="popup__title" >Редактировать профиль</h3>
+      <form name="form" class="popup__container">
+        <input type="text" name="title" class="popup__input popup__input_name">
+        <input type="text" name="subtitle" class="popup__input popup__input_job">
+        <button type="submit" class="popup__button">Сохранить</button>
       </form>
     </div>
   </div>
-  <script src="js/script.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>

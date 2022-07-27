@@ -1,9 +1,10 @@
-.form__button {
+.popup__button {
   width: 358px;
   height: 50px;
   background-color: black;
+  /* border-color: transparent; */
   color: white;
-  margin: 48px auto auto;
+  margin: 25px auto 0;
   border: none;
   border-radius: 2px;
   font-weight: 400;
@@ -11,13 +12,13 @@
   line-height: 22px;
 }
 
-.form__button:hover {
+.popup__button:hover {
   background-color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
-  .form__button {
+  .popup__button {
     width: 238px;
     height: 46px;
     margin: 45px auto auto;

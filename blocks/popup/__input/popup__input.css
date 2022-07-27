@@ -1,4 +1,4 @@
-.form__input {
+.popup__input {
   height: 57px;
   border: none;
   border-bottom: 1px solid #000;
@@ -7,8 +7,9 @@
   font-size: 14px;
   line-height: 17px;
   overflow-y: scroll;
+  /* max-width: 15ch; */
 }
 
-.form__input:focus {
+.popup__input:focus {
   outline-color: #bcbcc4;
 }

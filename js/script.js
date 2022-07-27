@@ -5,19 +5,19 @@ const popupEle = document.querySelector(".popup");
 const profileName = document.querySelector(".profile__name");
 const profileCharacter = document.querySelector(".profile__character");
 
-const formButton = document.querySelector(".form__button");
+const formButton = document.querySelector(".popup__button");
 
-let formElement = document.querySelector(".form");
+let formElement = document.querySelector(".popup__container");
 
-let nameInput = formElement.querySelector(".form__input_name-title");
-let jobInput = formElement.querySelector(".form__input_name-subtitle");
+let nameInput = formElement.querySelector(".popup__input_name");
+let jobInput = formElement.querySelector(".popup__input_job");
 
 function openPopup() {
-  popupEle.classList.add("popup__is-opened");
+  popupEle.classList.add("popup_opened");
 }
 
 function closePopup() {
-  popupEle.classList.remove("popup__is-opened");
+  popupEle.classList.remove("popup_opened");
 }
 
 function ClosePopupButtonClick(evt) {
