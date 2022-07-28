@@ -1,28 +1,32 @@
-.popup__button {
+.form__button {
   width: 358px;
-  height: 50px;
+  min-height: 50px;
   background-color: black;
-  /* border-color: transparent; */
+  /* background-color: transparent; */
   color: white;
-  margin: 25px auto 0;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 35px;
   border: none;
+  outline: none;
   border-radius: 2px;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
 }
 
-.popup__button:hover {
+.form__button:hover {
   background-color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
-  .popup__button {
+  .form__button {
     width: 238px;
-    height: 46px;
+    min-height: 46px;
     margin: 45px auto auto;
     font-size: 14px;
     line-height: 17px;
+    margin-top: 30px;
   }
 }

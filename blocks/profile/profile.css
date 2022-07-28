@@ -14,12 +14,17 @@
     column-gap: 15px;
   }
 }
+@media screen and (max-width: 900px) {
+  .profile {
+    flex-direction: column;
+    /* max-width: 581px; */
+  }
+}
 
+/*
 @media screen and (max-width: 767px) {
   .profile {
     flex-direction: column;
     max-width: 581px;
-    margin: 0 auto;
-
   }
-}
+} */
