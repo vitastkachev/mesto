@@ -16,18 +16,6 @@ function closePopup() {
   popupEle.classList.remove('popup_opened');
 }
 
-// function closePopupButtonClick(evt) {
-//   const popupCloseBtn = evt.target;
-//   if (popupCloseBtn.classList.contains('popup__close-button')) {
-//     const currentPopup = popupCloseBtn.closest('.popup');
-//     closePopup(currentPopup);
-//   }
-// }
-
-// popupBtn.addEventListener('click', openPopup);
-
-popupCloseBtn.addEventListener('click', closePopup);
-
 function setPopupInputValue() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileCharacter.textContent;
@@ -48,5 +36,5 @@ popupEditBtn.addEventListener('click', function () {
   setPopupInputValue();
   openPopup();
 });
-
+popupCloseBtn.addEventListener('click', closePopup);
 formElement.addEventListener('submit', formSubmitHandler);

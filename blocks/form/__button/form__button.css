@@ -2,11 +2,10 @@
   width: 358px;
   min-height: 50px;
   background-color: black;
-  /* background-color: transparent; */
   color: white;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 35px;
+  margin-top: 48px;
   border: none;
   outline: none;
   border-radius: 2px;
@@ -24,9 +23,8 @@
   .form__button {
     width: 238px;
     min-height: 46px;
-    margin: 45px auto auto;
+    margin: 45px auto 0;
     font-size: 14px;
     line-height: 17px;
-    margin-top: 30px;
   }
 }

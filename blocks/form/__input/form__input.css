@@ -1,5 +1,5 @@
 .form__input {
-  height: 57px;
+  height: 27px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   background-color: transparent;
@@ -7,8 +7,12 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+  margin-bottom: 30px;
 }
 
 .form__input:focus {
   outline-color: #bcbcc4;
+}
+.form__input:nth-child(2n) {
+  margin-bottom: 0;
 }

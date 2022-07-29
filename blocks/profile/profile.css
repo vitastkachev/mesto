@@ -14,17 +14,16 @@
     column-gap: 15px;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .profile {
     flex-direction: column;
-    /* max-width: 581px; */
   }
 }
 
-/*
+
 @media screen and (max-width: 767px) {
   .profile {
     flex-direction: column;
     max-width: 581px;
   }
-} */
+}

@@ -16,5 +16,8 @@
     text-align: center;
     font-size: 14px;
     line-height: 1.214;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 14px;
   }
 }
