@@ -6,8 +6,7 @@
 }
 @media screen and (max-width: 1024px) {
   .footer {
-    /* width: 75%; */
-    max-width: 650px;
+    max-width: 620px;
   }
 }
 @media screen and (max-width: 767px) {
