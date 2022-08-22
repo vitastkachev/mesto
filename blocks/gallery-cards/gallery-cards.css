@@ -1,4 +1,4 @@
-.elements {
+.gallery-cards {
   max-width: 880px;
   display: grid;
   align-items: center;
@@ -8,17 +8,19 @@
   margin-left: auto;
   margin-right: auto;
   padding-top: 36px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 @media screen and (max-width: 1024px) {
-  .elements {
+  .gallery-cards {
     max-width: 650px;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 767px) {
-  .elements {
+  .gallery-cards {
     width: 95%;
     grid-template-columns: auto;
   }

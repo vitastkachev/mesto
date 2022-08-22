@@ -28,66 +28,64 @@
       </button>
     </section>
     <section class="elements">
-      <div class="element">
-        <img src="./images/karachayevsk.jpg" alt="Карачаево-Черкесия" class="element__img">
-        <div class="element__container">
-          <h2 class="element__title">Карачаевск</h2>
-          <button type="button" class="element__like-button"><img src="./images/like.svg" alt="Карачаево-Черкесия"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./images/elbrus.jpg" alt="Эльбрус" class="element__img">
-        <div class="element__container">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button type="button" class="element__like-button"><img src="./images/like.svg" alt="лайк"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./images/dombay.jpg" alt="Домбай" class="element__img">
-        <div class="element__container">
-          <h2 class="element__title">Домбай</h2>
-          <button type="button" class="element__like-button"><img src="./images/like.svg" alt="лайк"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./images/elbrus.jpg" alt="Эльбрус" class="element__img">
-        <div class="element__container">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button type="button" class="element__like-button"><img src="./images/like.svg" alt="лайк"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./images/dombay.jpg" alt="Домбай" class="element__img">
-        <div class="element__container">
-          <h2 class="element__title">Домбай</h2>
-          <button type="button" class="element__like-button"><img src="./images/like.svg" alt="лайк"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./images/karachayevsk.jpg" alt="Карачаево-Черкесия" class="element__img">
-        <div class="element__container">
-          <h2 class="element__title">Карачаево-Черкесия</h2>
-          <button type="button" class="element__like-button"><img src="./images/like.svg" alt="лайк"></button>
-        </div>
-      </div>
+      <ul class="gallery-cards">
+
+      </ul>
     </section>
   </main>
   <footer class="footer">
     <p class="footer__author">&copy; 2022 Ткачёв Виталий</p>
   </footer>
-  <div class="popup">
+
+  <div class="popup popup_type_edit">
     <div class="popup__container">
-      <button type="button" class="popup__close-button">
+      <button type="button" class="popup__close-button popup__close-button_edit">
         <img src="./images/closeicon.svg" alt="крестик" class="popup__close-button-img">
       </button>
       <h3 class="popup__title" >Редактировать профиль</h3>
-      <form name="form" class="form">
+      <form name="form" class="form form_edit">
         <input type="text" name="title" class="form__input form__input_name-title">
         <input type="text" name="subtitle" class="form__input form__input_name-subtitle">
-        <button type="submit" class="form__button">Сохранить</button>
+        <button type="submit" class="form__button form__button_save">Сохранить</button>
       </form>
     </div>
   </div>
-  <script src="./scripts/script.js"></script>
+
+  <div class="popup popup_type_new-card">
+    <div class="popup__container">
+      <button type="button" class="popup__close-button popup__close-button_new-card">
+        <img src="./images/closeicon.svg" alt="крестик" class="popup__close-button-img">
+      </button>
+      <h3 class="popup__title popup__title_new-card">Новое место</h3>
+      <form name="form" class="form form_new-card">
+        <input type="text" name="title" placeholder="Название" class="form__input form__input_this-name">
+        <input type="text" name="subtitle" placeholder="Ссылка на картинку" class="form__input form__input_this-link">
+        <button type="submit" class="form__button form__button_create">Создать</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_type_image">
+    <div class="popup__container popup__container_type-image">
+      <button class="popup__close-button popup__close-button_image" type="button">
+        <img src="./images/closeicon.svg" alt="крестик" class="popup__close-button-img">
+      </button>
+      <img class="popup__image">
+      <h2 class="popup__caption"></h2>
+    </div>
+  </div>
+
+  <template id="gallery-cards-template">
+    <li class="gallery-cards__container">
+      <button class="gallery-cards__delete"></button>
+      <img class="gallery-cards__image">
+      <div class="gallery-cards__items">
+        <h2 class="gallery-cards__title"></h2>
+        <button class="gallery-cards__like-button"></button>
+      </div>
+    </li>
+  </template>
+
+  <script src="./scripts/script.js" defer></script>
 </body>
 </html>

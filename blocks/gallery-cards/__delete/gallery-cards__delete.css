@@ -1,0 +1,18 @@
+.gallery-cards__delete {
+  transition: opacity 0.3s ease-in-out;
+  width: 18px;
+  height: 20px;
+  background: url(../../../images/Trash.svg);
+
+  font-size: 0;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+
+}
+
+.gallery-cards__delete:hover {
+  opacity: .6;
+}
