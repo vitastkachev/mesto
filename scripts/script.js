@@ -25,13 +25,14 @@ const initialCards = [
   }
 ];
 const page = document.querySelector('.page')
+const pageNoscroll = document.querySelector('.page_noscroll')
 const popupEditBtn = document.querySelector('.profile__edit-button'); //кнопка редактирования
 const popupTypeEdit = document.querySelector('.popup_type_edit'); //попап редактирования
 const profileName = document.querySelector('.profile__name');
 const profileCharacter = document.querySelector('.profile__character');
-let formEdit = document.querySelector('.form_edit'); //форма редактирования
-let nameInput = formEdit.querySelector('.form__input_name-title'); //имя
-let jobInput = formEdit.querySelector('.form__input_name-subtitle'); //работа
+const formEdit = document.querySelector('.form_edit'); //форма редактирования
+const nameInput = formEdit.querySelector('.form__input_name-title'); //имя
+const jobInput = formEdit.querySelector('.form__input_name-subtitle'); //работа
 
 const popupAddBtn = document.querySelector('.profile__add-button'); //кнопка добавить
 const popupTypeNewCard = document.querySelector('.popup_type_new-card'); //попап создания
@@ -91,14 +92,11 @@ else if(position = 'after'){
 }}
 
 
-function addEventListener(){
   formNewCard.addEventListener('submit', (evt) => {
     evt.preventDefault();
     renderCard(galleryCards, {link: thisLinkInput.value, name: thisNameInput.value}, 'before')
     closePopup(popupTypeNewCard);
   })
-}
-addEventListener();
 
 function createInitialCards(){
   initialCards.forEach((item) => renderCard(galleryCards, item, 'after'));
@@ -137,26 +135,16 @@ popupEditBtn.addEventListener('click', function () {
 });
 
 popupAddBtn.addEventListener('click', function () {
+  formNewCard.reset();
   openPopup(popupTypeNewCard);
 });
 
 
 popupCloseBtnEdit.addEventListener('click', () => { closePopup(popupTypeEdit)});
 popupCloseBtnNewCard.addEventListener('click', () => { closePopup(popupTypeNewCard)});
+
 popupCloseBtnImage.addEventListener('click', () => { closePopup(popupTypeImage)
-  page.classList.remove('page_noscroll');
+page.classList.remove('page_noscroll');
 });
 
 formEdit.addEventListener('submit', formSubmitHandler);
-
-
-
-
-// function closePopupImage() {
-//   page.classList.remove('page_noscroll');
-//   popupCloseBtnImage.addEventListener('click', () => { closePopupImage(popupTypeImage)});
-// };
-// closePopupImage();
-// popupCloseBtnImage.addEventListener('click', () => { closePopup(popupTypeImage)});
-
-//   page.classList.add('page_noscroll');
