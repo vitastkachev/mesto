@@ -45,7 +45,7 @@
       <h3 class="popup__title" >Редактировать профиль</h3>
 
       <form class="popup__forms popup__forms_edit" name="edit" novalidate>
-        <input type="text" class="popup__input popup__input_name-title" placeholder="Имя"name="username"  id="username"   value="" required
+        <input type="text" class="popup__input popup__input_name-title" placeholder="Имя" name="username"  id="username"   value="" required
         minlength="2" maxlength="40">
         <span class="popup__input-error popup__input-error_username"></span>
         <input type="text" class="popup__input popup__input_name-subtitle"  placeholder="О себе" name="userinfo" id="userinfo" value=""
@@ -67,7 +67,7 @@
       <form class="popup__forms popup__forms_new-card" name="add" novalidate>
         <input type="text" placeholder="Название" class="popup__input popup__input_this-name"   name="cardinfo" id="cardinfo"  value="" required minlength="2" maxlength="30">
         <span class="popup__input-error popup__input-error_cardinfo"></span>
-        <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_this-link"   name="cardurl" id="cardurl"  value="" type="url"  required>
+        <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_this-link"   name="cardurl" id="cardurl"  value=""  required>
         <span class="popup__input-error popup__input-error_cardurl"></span>
         <button type="submit" class="popup__submit-button popup__submit-button_create" name="submit">Создать</button>
       </form>
@@ -80,7 +80,7 @@
       <button class="popup__close-button popup__close-button_image" type="button">
         <img src="./images/closeicon.svg" alt="крестик" class="popup__close-button-img">
       </button>
-      <img class="popup__image">
+      <img src="#" alt="#" class="popup__image">
       <h2 class="popup__caption"></h2>
     </div>
   </div>
