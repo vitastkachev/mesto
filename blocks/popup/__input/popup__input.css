@@ -1,4 +1,4 @@
-.form__input {
+.popup__input {
   height: 27px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
@@ -8,11 +8,12 @@
   font-size: 14px;
   line-height: 17px;
   margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
-.form__input:focus {
+.popup__input:focus {
   outline-color: #bcbcc4;
 }
-.form__input:nth-child(2n) {
+.popup__input:nth-child(2n) {
   margin-bottom: 0;
 }
