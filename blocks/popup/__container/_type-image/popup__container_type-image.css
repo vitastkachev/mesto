@@ -33,8 +33,8 @@
 
   .popup__container_type-image {
     position: relative;
-    max-width: 75vw;
-    max-height: 75vh;
+    /* max-width: 75vw; */
+    /* max-height: 75vh; */
     width: initial;
     background: transparent;
   }

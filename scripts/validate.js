@@ -1,17 +1,12 @@
-
-
 const validSelector = {
   formSelector: '.popup__forms',
   inputSelector: '.popup__input',
-  spanErrorSelector: '.popup__input-error',
-  submitButtonSelector: '.popup__submit-button',
+  spanErrorSelector: 'popup__input-error',
   errorSelector: 'popup__input-error',
+  submitButtonSelector: '.popup__submit-button',
   invalidSubmitButtonSelector: 'popup__submit-button_turn-off',
 };
 
-// const forms = document.querySelectorAll(validSelector.formSelector);
-// const inputList = Array.from(document.querySelectorAll(validSelector.inputSelector));
-// const submitButton = document.querySelectorAll(validSelector.submitButtonSelector);
 
 const clearErrorForms = (formsElement, elementsSubmit) => {
   formsElement.querySelectorAll(validSelector.inputSelector).forEach((clearinput) => {
@@ -28,10 +23,10 @@ const clearErrorForms = (formsElement, elementsSubmit) => {
 
 const toggleFormSubmit = (elementsSubmit, { disable }) => {
   if (disable) {
-    elementsSubmit.classList.remove('popup__submit-button_turn-off') ;      // кнопка неактивна
+    elementsSubmit.classList.remove('popup__submit-button_turn-off') ;
     elementsSubmit.removeAttribute('disabled');
   } else {
-    elementsSubmit.classList.add('popup__submit-button_turn-off');             // кнопка активна
+    elementsSubmit.classList.add('popup__submit-button_turn-off');
     elementsSubmit.setAttribute('disabled', 'disabled');
   }
 };
@@ -40,10 +35,10 @@ const toggleFormSubmit = (elementsSubmit, { disable }) => {
 const setFieldError = (elementField, elementsError, arguments, submitButton) => {
   elementsError.textContent = arguments.validationMessage;
   if (arguments.valid) {
-    elementField.classList.remove(arguments.invalidFieldClass);
+    // elementField.classList.remove(arguments.invalidFieldClass);   уд
     elementField.removeAttribute ('style');
   } else {
-    elementField.classList.add(arguments.invalidFieldClass) ;
+    // elementField.classList.add(arguments.invalidFieldClass) ;       уд
     elementField.setAttribute ('style',  'border-color: red');
 
   }
@@ -70,10 +65,10 @@ const setEventListener = (formsElement) => {
   });
 };
 
-const checkFieldValid = (elementField, formsElement, invalidFieldClass) => {          //ур стрел фии
+const checkFieldValid = (elementField, formsElement, invalidFieldClass) => {
   const { validationMessage, validity: { valid } } = elementField;
    const submitButton = formsElement.querySelector('.popup__submit-button')
-   const errorTextContainerSelector = `.popup__input-error_${elementField.name}`;       //ур стрел фии
+   const errorTextContainerSelector = `.popup__input-error_${elementField.name}`;
     const elementsError = formsElement.querySelector(errorTextContainerSelector);
 
 
@@ -89,9 +84,13 @@ const checkFieldValid = (elementField, formsElement, invalidFieldClass) => {    
   return valid ;
 };
 
+const submitCommonHandlers = (e) =>  {
+  e.preventDefault();
+};
 
-function enableValidation(form) {
- const forms = document.querySelectorAll('.popup__forms')
+
+function enableValidation(formSelector) {
+ const forms = Array.from(document.querySelectorAll(formSelector));
  forms.forEach((formsElement) => {
     formsElement.addEventListener('submit', submitCommonHandlers);
     setEventListener(formsElement);
@@ -99,18 +98,7 @@ function enableValidation(form) {
   });
 };
 
-const submitCommonHandlers = (e) =>  {
-  e.preventDefault();     // отмена по ум
-};
-
-
-
-enableValidation();
-
-
-
-
-
+enableValidation(validSelector.formSelector);
 
 
 

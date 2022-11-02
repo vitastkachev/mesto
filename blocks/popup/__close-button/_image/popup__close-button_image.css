@@ -15,3 +15,10 @@
   opacity: .6;
 }
 
+@media screen and (max-width: 767px) {
+  .popup__close-button_image {
+    top: -45px;
+    right: -10px;
+    background-color: black;
+  }
+}

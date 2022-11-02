@@ -24,6 +24,8 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
+
 const page = document.querySelector('.page')
 const pageNoscroll = document.querySelector('.page_noscroll')
 const popupEditBtn = document.querySelector('.profile__edit-button'); //кнопка редактирования
@@ -37,7 +39,7 @@ const jobInput = formEdit.querySelector('.popup__input_name-subtitle'); //раб
 const buttonSave = document.querySelector('.popup__submit-button_preserve');
 const buttonCreate = document.querySelector('.popup__submit-button_create');
 
-const submitButton = document.querySelector('.popup__submit-button');
+// const submitButton = document.querySelector('.popup__submit-button');
 const forms = document.querySelector('.popup__forms');
 
 const popupAddBtn = document.querySelector('.profile__add-button'); //кнопка добавить
@@ -64,7 +66,6 @@ function openImagePopup (link, name)  {
   popupImg.alt = name;
   popupText.textContent = name;
   openPopup(popupTypeImage);
-  page.classList.add('page_noscroll');
  }
 
 function createCard(link, name){
@@ -113,12 +114,15 @@ createInitialCards();
 function openPopup(modal) {
   modal.classList.add('popup_opened');
   page.classList.add('page_noscroll');
+
+  document.addEventListener('keydown', closeByEsc);
 };
 
 function closePopup(modal) {
   modal.classList.remove('popup_opened');
-
   page.classList.remove('page_noscroll');
+
+  document.addEventListener('keydown', closeByEsc);
 };
 
 function setPopupInputValue() {
@@ -131,7 +135,7 @@ function setNodeTextValue() {
   profileCharacter.textContent = jobInput.value;
 };
 
-function formSubmitHandler(evt) {
+function handFormEdit(evt) {
   evt.preventDefault();
   setNodeTextValue();
   closePopup(popupTypeEdit);
@@ -140,13 +144,17 @@ function formSubmitHandler(evt) {
 popupEditBtn.addEventListener('click', function () {
   setPopupInputValue();
   openPopup(popupTypeEdit);
-  toggleFormSubmit(submitButton, { disable: formEdit.checkValidity() });
+  // toggleFormSubmit(submitButton, { disable: formEdit.checkValidity() });
+
+  toggleFormSubmit(buttonSave, { disable: formEdit.checkValidity() });
   clearErrorForms(formEdit, buttonSave);
 });
 
 popupAddBtn.addEventListener('click', function () {
   formNewCard.reset();
-  toggleFormSubmit(submitButton, { disable: formNewCard.checkValidity() });
+  // toggleFormSubmit(submitButton, { disable: formNewCard.checkValidity() });
+
+  toggleFormSubmit(buttonSave, { disable: formNewCard.checkValidity() });
   openPopup(popupTypeNewCard);
   clearErrorForms(formNewCard, buttonCreate);
 });
@@ -157,30 +165,24 @@ popupCloseBtnNewCard.addEventListener('click', () => {closePopup(popupTypeNewCar
 popupCloseBtnImage.addEventListener('click', () => { closePopup(popupTypeImage);
 });
 
-popupTypeEdit.addEventListener('click', function(event) {
-  if (event.target === event.currentTarget) {
-    closePopup(popupTypeEdit);
-  }
+
+
+document.querySelectorAll('.popup').forEach( popup => {
+  popup.addEventListener('mousedown', (evt) => {
+    if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__close-button-img')) {
+      closePopup(popup);
+    };
+  });
 });
 
-popupTypeNewCard.addEventListener('click', function(event) {
-  if (event.target === event.currentTarget) {
-    closePopup(popupTypeNewCard);
+
+
+formEdit.addEventListener('submit', handFormEdit);
+
+
+function closeByEsc(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
   }
-});
-
-popupTypeImage.addEventListener('click', function(event) {
-  if (event.target === event.currentTarget) {
-    closePopup(popupTypeImage);
-  }
-});
-
-formEdit.addEventListener('submit', formSubmitHandler);
-
-document.addEventListener('keydown', function(e) {
-if (e.key === 'Escape') {
-  closePopup(popupTypeEdit)
-  closePopup(popupTypeImage)
-  closePopup(popupTypeNewCard)
 }
-});
