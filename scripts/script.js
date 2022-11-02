@@ -25,7 +25,6 @@ const initialCards = [
   }
 ];
 
-
 const page = document.querySelector('.page')
 const pageNoscroll = document.querySelector('.page_noscroll')
 const popupEditBtn = document.querySelector('.profile__edit-button'); //кнопка редактирования
@@ -39,7 +38,7 @@ const jobInput = formEdit.querySelector('.popup__input_name-subtitle'); //раб
 const buttonSave = document.querySelector('.popup__submit-button_preserve');
 const buttonCreate = document.querySelector('.popup__submit-button_create');
 
-// const submitButton = document.querySelector('.popup__submit-button');
+const submitButton = document.querySelector('.popup__submit-button');
 const forms = document.querySelector('.popup__forms');
 
 const popupAddBtn = document.querySelector('.profile__add-button'); //кнопка добавить
@@ -91,23 +90,23 @@ function createCard(link, name){
 
 
 function renderCard(container, data , position = 'before'){
-if (position = 'before'){
-  container.prepend(createCard(data.link, data.name));
-}
-else if(position = 'after'){
-  container.append(createCard(data.link, data.name));
-}}
+  if (position = 'before'){
+    container.prepend(createCard(data.link, data.name));
+  } else if (position = 'after') {
+    container.append(createCard(data.link, data.name));
+  }
+};
 
 
-  formNewCard.addEventListener('submit', (evt) => {
-    evt.preventDefault();
-    renderCard(galleryCards, {link: thisLinkInput.value, name: thisNameInput.value}, 'before')
-    closePopup(popupTypeNewCard);
-  })
+formNewCard.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  renderCard(galleryCards, {link: thisLinkInput.value, name: thisNameInput.value}, 'before')
+  closePopup(popupTypeNewCard);
+});
 
 function createInitialCards(){
   initialCards.forEach((item) => renderCard(galleryCards, item, 'after'));
-}
+};
 
 createInitialCards();
 
@@ -144,26 +143,18 @@ function handFormEdit(evt) {
 popupEditBtn.addEventListener('click', function () {
   setPopupInputValue();
   openPopup(popupTypeEdit);
-  // toggleFormSubmit(submitButton, { disable: formEdit.checkValidity() });
-
-  toggleFormSubmit(buttonSave, { disable: formEdit.checkValidity() });
-  clearErrorForms(formEdit, buttonSave);
+  resetValidation(formEdit);
 });
 
 popupAddBtn.addEventListener('click', function () {
   formNewCard.reset();
-  // toggleFormSubmit(submitButton, { disable: formNewCard.checkValidity() });
-
-  toggleFormSubmit(buttonSave, { disable: formNewCard.checkValidity() });
   openPopup(popupTypeNewCard);
-  clearErrorForms(formNewCard, buttonCreate);
+  resetValidation(formNewCard);
 });
 
-
-popupCloseBtnEdit.addEventListener('click', () => { closePopup(popupTypeEdit)});
-popupCloseBtnNewCard.addEventListener('click', () => {closePopup(popupTypeNewCard)});
-popupCloseBtnImage.addEventListener('click', () => { closePopup(popupTypeImage);
-});
+popupCloseBtnEdit.addEventListener('click', () => { closePopup(popupTypeEdit) });
+popupCloseBtnNewCard.addEventListener('click', () => { closePopup(popupTypeNewCard) });
+popupCloseBtnImage.addEventListener('click', () => { closePopup(popupTypeImage) });
 
 
 
@@ -175,10 +166,7 @@ document.querySelectorAll('.popup').forEach( popup => {
   });
 });
 
-
-
 formEdit.addEventListener('submit', handFormEdit);
-
 
 function closeByEsc(evt) {
   if (evt.key === 'Escape') {
@@ -186,3 +174,5 @@ function closeByEsc(evt) {
     closePopup(openedPopup);
   }
 }
+
+
