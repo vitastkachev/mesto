@@ -38,9 +38,6 @@ const jobInput = formEdit.querySelector('.popup__input_name-subtitle'); //раб
 const buttonSave = document.querySelector('.popup__submit-button_preserve');
 const buttonCreate = document.querySelector('.popup__submit-button_create');
 
-const submitButton = document.querySelector('.popup__submit-button');
-const forms = document.querySelector('.popup__forms');
-
 const popupAddBtn = document.querySelector('.profile__add-button'); //кнопка добавить
 const popupTypeNewCard = document.querySelector('.popup_type_new-card'); //попап создания
 const formNewCard = document.querySelector('.popup__forms_new-card'); // форма попап создания
@@ -143,19 +140,14 @@ function handFormEdit(evt) {
 popupEditBtn.addEventListener('click', function () {
   setPopupInputValue();
   openPopup(popupTypeEdit);
-  resetValidation(formEdit);
+  resetValidation(formEdit, selectors);
 });
 
 popupAddBtn.addEventListener('click', function () {
   formNewCard.reset();
   openPopup(popupTypeNewCard);
-  resetValidation(formNewCard);
+  resetValidation(formNewCard, selectors);
 });
-
-popupCloseBtnEdit.addEventListener('click', () => { closePopup(popupTypeEdit) });
-popupCloseBtnNewCard.addEventListener('click', () => { closePopup(popupTypeNewCard) });
-popupCloseBtnImage.addEventListener('click', () => { closePopup(popupTypeImage) });
-
 
 
 document.querySelectorAll('.popup').forEach( popup => {
@@ -174,5 +166,7 @@ function closeByEsc(evt) {
     closePopup(openedPopup);
   }
 }
+
+
 
 
